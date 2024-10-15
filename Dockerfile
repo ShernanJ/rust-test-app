@@ -4,8 +4,8 @@ FROM rust:latest
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Copy the Cargo.toml and Cargo.lock files
-COPY test_app/Cargo.toml test_app/Cargo.lock ./test_app/
+# Copy the Cargo.toml file
+COPY test_app/Cargo.toml ./test_app/
 
 # Copy the source code
 COPY test_app ./test_app
@@ -14,4 +14,4 @@ COPY test_app ./test_app
 RUN cargo build --release --manifest-path=test_app/Cargo.toml
 
 # Set the startup command to run the binary
-CMD ["./target/release/test_app"]
+CMD ["./test_app/target/release/test_app"]
