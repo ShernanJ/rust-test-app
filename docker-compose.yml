@@ -1,9 +1,0 @@
-services:
-  rust_app:
-    build: .
-    container_name: rust_app_container
-    volumes:
-      - .:/usr/src/app
-    ports:
-      - "8080:8080"
-    command: ["./test_app/target/release/test_app"]
